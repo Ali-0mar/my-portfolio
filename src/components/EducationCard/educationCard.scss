@@ -1,0 +1,123 @@
+@import '../../ui/colors';
+.row {
+  display: flex;
+
+  section {
+    border-radius: 10px;
+    width: calc(50% - 40px);
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 4px 10px 0 rgba(128, 128, 128, 0.5);
+    transition: 0.3s all linear;
+    background:#060f16ba;
+    &:hover {
+      box-shadow: 0 4px 10px 0 #808080;
+    }
+
+
+    .icon {
+      position: absolute;
+      background: #f2f2f2;
+      height: 25px;
+      width: 25px;
+      padding: 5px;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 50%;
+      color: $primarylight;
+      font-size: 17px;
+      box-shadow: 0 0 0 4px #fff, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .details {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5px;
+      .title {
+        font-size: 24px;
+        font-weight: 500;
+        color: #a0c5ff;
+        font-family: 'Ubuntu', sans-serif;
+        white-space: pre-wrap;
+      }
+
+      & span {
+        color: $primarylight;
+        font-size: 18px;
+        font-family: 'JoseFin sans', sans-serif;
+      }
+      .date {
+        white-space: nowrap;
+      }
+    }
+
+    p {
+      margin: 10px 0;
+      font-size: 18px;
+      line-height: 1.4;
+      letter-spacing: 0.2px;
+      color:#ffffff  ;
+    }
+  }
+}
+
+.row_1 {
+  justify-content: flex-start;
+
+  section {
+    &::before {
+      right: -7px;
+    }
+
+    .icon {
+      top: 15px;
+      right: -20px;
+    }
+  }
+}
+
+.row_2 {
+  justify-content: flex-end;
+
+  section {
+    &::before {
+      left: -7px;
+    }
+
+    .icon {
+      top: 15px;
+      left: -20px;
+    }
+  }
+}
+
+@media (max-width: 790px) {
+  .row {
+    margin: 30px 0 3px 60px;
+
+    section {
+      width: 100%;
+    }
+  }
+
+  .row_1 section .icon {
+    left: -60px;
+  }
+  .row_2 section .icon {
+    left: -60px;
+  }
+}
+
+@media (max-width: 440px) {
+  .row {
+    margin: 10px 0;
+
+    section {
+      &::before,
+      .icon {
+        display: none;
+      }
+    }
+  }
+}
